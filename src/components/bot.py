@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from ..utils.constants import TOKEN
-from ..utils.descriptions import rollDescription, flipDescription
+from ..content.descriptions import rollDescription, flipDescription
 from .responses import rollResponse, flipResponse
 
 
@@ -13,8 +13,8 @@ def runDiscordBot():
     async def roll(context, dice):
         try:
             diceToRoll = int(dice)
-            response = rollResponse(diceToRoll)
-            await context.respond(response)
+            response, buttons = rollResponse(diceToRoll)
+            await context.respond(response, view=buttons)
         except Exception as err:
             print(err)
 

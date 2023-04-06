@@ -1,6 +1,8 @@
+from ..discordToken import TOKEN
+
+
 BASIC = "Basic"
-from .token import TOKEN
-FAILURE = "Failure"
+UNPAIRED = "Unpaired"
 CRITICAL = "Critical"
 EXTREME = "Extreme"
 IMPOSSIBLE = "Impossible"
@@ -11,3 +13,7 @@ DIESIZE = 6
 HEADS = "heads"
 TAILS = "tails"
 COIN = [HEADS, TAILS]
+REROLL = "Reroll"
+RISKROLL = "Risk Roll"
+ALL_OR_NOTHING = "All-or-Nothing Roll"
+REGULAR_ROLL = "Regular Roll"

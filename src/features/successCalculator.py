@@ -1,6 +1,6 @@
 
 from ..utils.constants import \
-    BASIC, CRITICAL, EXTREME, IMPOSSIBLE, WHATAHERO, DIESIZE
+    BASIC, CRITICAL, EXTREME, IMPOSSIBLE, WHATAHERO, DIESIZE, UNPAIRED
 
 
 
@@ -13,8 +13,9 @@ def sortRolls(rolls):
     return sortedRolls
 
 
+
 def countSuccess(sortedRolls):
-    successes = {n:0 for n in range(7)}
+    successes = [0 for n in range(7)]
 
     for numberOfFace in sortedRolls.values():
 
@@ -32,10 +33,9 @@ def calculateSuccess(rolls):
     sortedRolls = sortRolls(rolls)
     successes = countSuccess(sortedRolls)
 
-    return {BASIC:successes[2], CRITICAL:successes[3],\
-        EXTREME:successes[4],  IMPOSSIBLE:successes[5], \
-            WHATAHERO:successes[6]}
-
+    return {UNPAIRED:successes[1], BASIC:successes[2],\
+        CRITICAL:successes[3], EXTREME:successes[4],\
+            IMPOSSIBLE:successes[5], WHATAHERO:successes[6]}
 
 
 
@@ -50,7 +50,6 @@ def calculateRiskySuccess(rolls, riskedSuccess):
 
 
 
-
 def calculateAllOrNothing(newRolls, oldRolls):
 
     oldSortedRolls = sortRolls(oldRolls)
@@ -62,6 +61,6 @@ def calculateAllOrNothing(newRolls, oldRolls):
 
     successes = countSuccess(newSortedRolls)
 
-    return {BASIC: successes[2], CRITICAL: successes[3], \
-        EXTREME: successes[4],  IMPOSSIBLE: successes[5], \
-            WHATAHERO: successes[6]}
+    return {UNPAIRED: successes[1], BASIC: successes[2],
+            CRITICAL: successes[3], EXTREME: successes[4],
+            IMPOSSIBLE: successes[5], WHATAHERO: successes[6]}
