@@ -1,8 +1,11 @@
+import os
 import discord
 from discord.ext import commands
-from ..utils.constants import TOKEN
+
 from ..content.descriptions import rollDescription, flipDescription
 from .responses import rollResponse, flipResponse
+
+TOKEN = os.environ["DISCORD_TOKEN"]
 
 
 def runDiscordBot():

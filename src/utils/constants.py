@@ -1,6 +1,3 @@
-from ..discordToken import TOKEN
-
-
 BASIC = "Basic"
 UNPAIRED = "Unpaired"
 CRITICAL = "Critical"
