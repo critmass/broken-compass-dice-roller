@@ -1,0 +1,9 @@
+# fly.toml file generated for solitary-sky-3365 on 2023-04-07T09:52:05-07:00
+
+app = "solitary-sky-3365"
+kill_signal = "SIGINT"
+kill_timeout = 5
+primary_region = "sea"
+processes = []
+
+[env]

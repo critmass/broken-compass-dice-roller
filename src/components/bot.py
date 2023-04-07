@@ -5,7 +5,7 @@ from discord.ext import commands
 from ..content.descriptions import rollDescription, flipDescription
 from .responses import rollResponse, flipResponse
 
-TOKEN = os.environ["DISCORD_TOKEN"]
+TOKEN = os.environ.get("DISCORD_TOKEN")
 
 
 def runDiscordBot():
